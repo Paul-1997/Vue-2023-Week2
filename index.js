@@ -37,10 +37,9 @@ const app = createApp({
             }
             catch(err){
 				const { status } = err.response;
-				if (status === 403 || status === 401){
-					alert('請重新登入！');
-					location.href = 'login.html';
-				}
+
+				if (status === 403 || status === 401) alert('驗證失敗，請重新登入！');				
+				location.href = 'login.html';
             }
 
 		},
